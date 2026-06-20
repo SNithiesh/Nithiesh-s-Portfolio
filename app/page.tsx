@@ -1,36 +1,53 @@
-import Link from "next/link";
-import type { Metadata } from "next";
 import Nav from "@/components/Nav";
+import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
+import Stack from "@/components/sections/Stack";
+import Experience from "@/components/sections/Experience";
+import Work from "@/components/sections/Work";
+import AskMyPortfolio from "@/components/sections/AskMyPortfolio";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/sections/Footer";
 import Reveal from "@/components/Reveal";
 import CommandPalette from "@/components/CommandPalette";
-import { getAllCases } from "@/lib/caseStudies";
+import Guestbook from "@/components/Guestbook";
+import Stats from "@/components/Stats";
+import ScrollProgress from "@/components/ScrollProgress";
+import CursorFX from "@/components/CursorFX";
+import Marquee from "@/components/Marquee";
+import GitHubStats from "@/components/GitHubStats";
+import Effects from "@/components/Effects";
+import ToTop from "@/components/ToTop";
+import Konami from "@/components/Konami";
+import Coins from "@/components/Coins";
+import ChatWidget from "@/components/ChatWidget";
 
-export const metadata: Metadata = { title: "Case Studies | S. Nithiesh", description: "Deep dives into selected AI/ML and quantitative projects." };
-
-export default function CaseIndex() {
-  const cases = getAllCases();
+export default function Page() {
   return (
     <>
+      <ScrollProgress />
       <Nav />
       <main className="wrap" id="main">
-        <section style={{ paddingTop: 140 }}>
-          <div className="sec-head reveal"><span className="idx">/ writing</span><h2>Case Studies.</h2></div>
-          <div className="proj-grid reveal">
-            {cases.map((c) => (
-              <Link key={c.slug} className="proj glass" href={`/case/${c.slug}`}>
-                <div className="cat">{c.cat}</div>
-                <h3>{c.title}</h3>
-                <p>{c.summary}</p>
-                <div className="ptags">{c.tags.map((t) => (<span className="ptag" key={t}>{t}</span>))}</div>
-                <div className="foot"><span className="achieve">Read case study</span></div>
-              </Link>
-            ))}
-          </div>
-          <p style={{ marginTop: 30 }}><Link href="/" className="mono">← back home</Link></p>
-        </section>
+        <Hero />
+        <Stats />
+        <Marquee />
+        <GitHubStats />
+        <About />
+        <Stack />
+        <Experience />
+        <Work />
+        <AskMyPortfolio />
+        <Contact />
+        <Guestbook />
       </main>
+      <Footer />
       <Reveal />
       <CommandPalette />
+      <CursorFX />
+      <Effects />
+      <ToTop />
+      <Konami />
+      <Coins />
+      <ChatWidget />
     </>
   );
 }

@@ -1,0 +1,37 @@
+---
+title: "Algorithmic Portfolio Optimizer"
+summary: "A Modern Portfolio Theory engine that maximises the Sharpe ratio, with GARCH volatility forecasting and Black-Scholes option pricing."
+cat: "Asset Pricing"
+date: "2025-04-01"
+tags: ["SciPy", "QuantLib", "YFinance", "Scikit-learn", "Statsmodels"]
+repo: "https://github.com/SNithiesh/Portfolio-Optimization-Tool"
+---
+
+## The problem
+
+Given a universe of assets, what's the allocation that maximises return per unit of risk?
+And can the same engine also forecast volatility and price derivatives? I set out to build
+one quantitative pipeline that does all three.
+
+## What I built
+
+A **Modern Portfolio Theory (MPT)** optimisation tool that uses `scipy.optimize` (SLSQP)
+to generate custom asset weights, maximising the Sharpe ratio while minimising portfolio
+risk.
+
+- **Optimisation:** SLSQP solver over the efficient frontier to find optimal weights.
+- **Simulation:** portfolio return distributions against major indices using live
+  **YFinance** data, with Gaussian fits for expected return and downside volatility.
+- **Forecasting:** **ARCH/GARCH** volatility models for forward-looking risk.
+- **Regression:** Statsmodels **OLS** for factor relationships.
+- **Pricing:** **QuantLib Black-Scholes** European call option pricing.
+
+## Why it matters
+
+It's an end-to-end quant toolkit — allocation, risk forecasting, and derivative pricing —
+in a single reproducible pipeline, built on live market data.
+
+## Stack & techniques
+
+Python, SciPy (SLSQP), QuantLib, YFinance, Scikit-learn, Statsmodels, ARCH/GARCH,
+Black-Scholes, Modern Portfolio Theory.

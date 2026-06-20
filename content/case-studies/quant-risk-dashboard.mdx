@@ -1,0 +1,36 @@
+---
+title: "Quant Risk Dashboard"
+summary: "An automated risk-analysis pipeline over a decade of NIFTY 50 data — returns, volatility, Sharpe ratios, and sector benchmarking."
+cat: "Quantitative Finance"
+date: "2025-03-01"
+tags: ["Python", "Pandas", "SciPy", "Matplotlib"]
+repo: "https://github.com/SNithiesh/Stock-Price-Prediction"
+---
+
+## The problem
+
+Evaluating market risk across an index by hand doesn't scale. I wanted a single,
+reproducible pipeline that could ingest years of price history and output a clear,
+ranked picture of risk and return across every constituent.
+
+## What I built
+
+A fully automated risk-analysis pipeline processing **10+ years of NIFTY 50** historical
+data. It computes daily and annualised returns, volatility, and Sharpe ratios across all
+50 constituent equities, then renders a production-style dashboard.
+
+- **Returns & volatility** computed per equity, annualised for comparability.
+- **Risk-adjusted ranking** via Sharpe ratio, surfacing the top decile of assets.
+- **Distribution analysis** with kernel density estimates (KDE) and Gaussian fits to
+  map outliers and volatility clustering.
+- **Sector benchmarking** laid out with Matplotlib **GridSpec** for a dense, readable view.
+
+## Why it matters
+
+The output turns a wall of price data into an actionable ranking — which names carry the
+best risk-adjusted return, and which are outliers worth a second look.
+
+## Stack & techniques
+
+Python, Pandas, NumPy, SciPy, Matplotlib (GridSpec), statistical comparison models,
+Gaussian distribution fitting, percentile ranking.
